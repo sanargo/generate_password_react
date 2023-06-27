@@ -104,7 +104,7 @@ function App() {
 
   const generatePassword = () => {
     let password = "";
-    for (let i = 0; i <= 15; i++) {
+    for (let i = 0; i < 12; i++) {
       let charIndex = Math.floor(Math.random() * characters.length);
       password += characters[charIndex];
     }
@@ -115,7 +115,11 @@ function App() {
     setPasswordOne(generatePassword());
     setPasswordTwo(generatePassword());
   };
-  console.log(darkMode);
+
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    console.log("Copied");
+  };
 
   return (
     <div className="bg-gray-950 h-screen font-inter">
@@ -130,6 +134,7 @@ function App() {
         onClick={handleClick}
         passwordOne={passwordOne}
         passwordTwo={passwordTwo}
+        handleCopy={handleCopy}
       />
     </div>
   );
