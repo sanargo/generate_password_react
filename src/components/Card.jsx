@@ -1,4 +1,5 @@
 import { PiCopySimpleBold } from "react-icons/pi";
+import { AiFillThunderbolt } from "react-icons/ai";
 
 function Card({ onClick, passwordOne, passwordTwo, darkMode, handleCopy }) {
   return (
@@ -11,9 +12,10 @@ function Card({ onClick, passwordOne, passwordTwo, darkMode, handleCopy }) {
           Never use an insecure password again.
         </p>
         <button
-          className="bg-emerald-400 text-white text-sm p-2 rounded-md"
+          className="bg-emerald-400 text-white text-sm p-2 rounded-md flex items-center"
           onClick={onClick}
         >
+          <AiFillThunderbolt className="text-white text-lg mr-1" />
           Generate passwords
         </button>
         <div className="border-t border-gray-800 mt-8 py-8 flex gap-3 text-emerald-400 text-center text-xs md:text-sm">
